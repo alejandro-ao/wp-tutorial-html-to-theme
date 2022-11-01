@@ -49,11 +49,11 @@ function _s_setup()
 	add_theme_support('post-thumbnails');
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus(
-		array(
-			'menu-1' => esc_html__('Primary', '_s'),
-		)
-	);
+	// register_nav_menus(
+	// 	array(
+	// 		'menu-1' => esc_html__('Primary', '_s'),
+	// 	)
+	// );
 
 	/*
 		* Switch default core markup for search form, comment form, and comments
@@ -174,9 +174,25 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-function my_awesome_scripts()
+
+function custom_scripts()
 {
+
+	/**
+	 * Custom scripts and styles
+	 */
 	wp_enqueue_style("style", get_template_directory_uri() . "/assets/main.css", [], false);
-	wp_enqueue_script("script", get_template_directory_uri() . "/assets/main.min.js", [], false);
+	wp_enqueue_script("script", get_template_directory_uri() . "/assets/main.min.js", [], false, true);
 }
-add_action("wp_enqueue_scripts", "my_awesome_scripts");
+
+add_action("wp_enqueue_scripts", "custom_scripts");
+
+
+/**
+ * Register main menu
+ */
+function register_menu()
+{
+	register_nav_menu("main-menu", "Main menu");
+}
+add_action("init", "register_menu");

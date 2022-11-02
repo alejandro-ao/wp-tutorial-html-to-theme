@@ -18,9 +18,9 @@ get_header();
 	<section id="main" class="wrapper">
 		<div class="inner">
 			<h1 class="major"><?php the_title() ?></h1>
-			<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
+			<span class="image fit"><img src="<?= get_the_post_thumbnail_url() ?>" alt="" /></span>
 			<?php the_content() ?>
-		</div>
+		</div>	
 	</section>
 
 </div>

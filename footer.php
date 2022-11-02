@@ -22,7 +22,7 @@
 	</div>
 </footer>
 
-<!-- Scripts -->
+<!-- Theme Scripts -->
 <script src="<?= get_template_directory_uri() ?>/src/js/default/jquery.min.js"></script>
 <script src="<?= get_template_directory_uri() ?>/src/js/default/jquery.scrollex.min.js"></script>
 <script src="<?= get_template_directory_uri() ?>/src/js/default/jquery.scrolly.min.js"></script>

@@ -191,8 +191,8 @@ add_action("wp_enqueue_scripts", "custom_scripts");
 /**
  * Register main menu
  */
-function register_menu()
+function register_main_menu()
 {
-	register_nav_menu("main-menu", "Main menu");
+	register_nav_menu("main-menu", "Main Hyperspace Menu");
 }
-add_action("init", "register_menu");
+add_action("init", "register_main_menu");
